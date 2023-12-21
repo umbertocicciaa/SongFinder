@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SongFinder</string>
     <string name="input_research">Input Research</string>
+    <string name="song_image">song image</string>
 </resources>

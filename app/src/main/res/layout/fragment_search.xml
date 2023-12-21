@@ -15,10 +15,11 @@
             android:layout_gravity="center_vertical"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:background="@color/blue"
             android:hint="@string/input_research"
+            android:inputType="text"
             android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:inputType="text"/>
+            android:paddingEnd="10dp" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView

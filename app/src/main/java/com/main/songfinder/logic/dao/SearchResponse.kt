@@ -11,5 +11,7 @@ data class Result(
     val nameArtist: String,
     @SerializedName("full_title")
     val title: String,
-    val id: Int
+    val songId: Int,
+    @SerializedName("lyrics_owner_id")
+    val lyrycsOwnerId:Int
 )

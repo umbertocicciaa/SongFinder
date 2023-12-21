@@ -8,9 +8,11 @@ class SongFinderApplication : Application() {
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
-        const val TOKEN="obNeGsUzN5SzzWHFeqTHYV7Z9fhaHSM2HdThUgZlPv5Y2eXjxYRqpAGuYWyVYQdy"
-        const val RESPONSE_OK: Int =200
+        const val TOKEN = "obNeGsUzN5SzzWHFeqTHYV7Z9fhaHSM2HdThUgZlPv5Y2eXjxYRqpAGuYWyVYQdy"
+        const val HEADER = "Authorization: Bearer $TOKEN"
+        const val RESPONSE_OK: Int = 200
     }
+
     override fun onCreate() {
         super.onCreate()
         context = applicationContext

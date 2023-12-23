@@ -8,8 +8,9 @@ import retrofit2.http.Query
 
 interface SearchService {
     @GET("search")
-    fun searchResponse(@Query("q")name:String,
-                   @Query("access_token")token: String =SongFinderApplication.TOKEN)
-    : Call<SearchResponse>
+    fun searchResponse(
+        @Query("q") name: String,
+        @Query("access_token") token: String = SongFinderApplication.TOKEN
+    ): Call<SearchResponse>
 
 }

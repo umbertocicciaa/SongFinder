@@ -15,7 +15,7 @@ object SongFinderNetwork {
     private val songService = ServiceCreator.create(SongService::class.java)
     suspend fun searchResponse(name: String): SearchResponse =
         searchService.searchResponse(name).await()
-    suspend fun searchSong(id: Int): SongResponse =
+    suspend fun searchSong(id: String): SongResponse =
         songService.searchSong(id).await()
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->

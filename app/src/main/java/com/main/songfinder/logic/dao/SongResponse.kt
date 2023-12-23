@@ -10,16 +10,19 @@ data class Song(
     val title: String,
     @SerializedName("release_date_for_display")
     val release: String,
+    //genius url
     val url: String,
     @SerializedName("artist_names")
     val artits: String,
     @SerializedName("lyrics_owner_id")
-    val artisId: Int,
+    val artisId: String,
     val album: Album
 )
 
 data class Album(
-    @SerializedName("lyrics_owner_id") val imageUrl: String,
+    @SerializedName("cover_art_url")
+    val imageUrl: String,
+    //genius url
     val url: String
 )
 

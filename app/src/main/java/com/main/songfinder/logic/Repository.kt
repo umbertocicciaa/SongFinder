@@ -21,7 +21,7 @@ object Repository {
         emit(result)
     }
 
-    fun searchSong(id: Int) = liveData(Dispatchers.IO) {
+    fun searchSong(id: String) = liveData(Dispatchers.IO) {
         val result = try {
             val songResponse: SongResponse = SongFinderNetwork.searchSong(id)
             if (songResponse.meta.status == SongFinderApplication.RESPONSE_OK) {

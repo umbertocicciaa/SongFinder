@@ -9,12 +9,15 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.main.songfinder.R
 
+/**
+ * Questa classe fornisce il fragment  della main activity
+ * @author umbertodomenicociccias
+ * */
 class SearchFragment : Fragment() {
 
     private val viewModel by lazy {

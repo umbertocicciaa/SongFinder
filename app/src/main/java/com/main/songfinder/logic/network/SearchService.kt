@@ -5,7 +5,10 @@ import com.main.songfinder.logic.dao.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
-
+/**
+ * Questa interfaccia gestisce le get request relativo alla ricerca effettuata dall'utente
+ * @author umbertodomenicociccia
+ * */
 interface SearchService {
     @GET("search")
     fun searchResponse(

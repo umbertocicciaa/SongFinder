@@ -14,7 +14,10 @@ import com.main.songfinder.R
 import com.main.songfinder.SongFinderApplication
 import com.main.songfinder.logic.dao.Hits
 import com.main.songfinder.ui.song.SongActivity
-
+/**
+ * Questa classe implementa l'adatattore per la recycle view
+ * @author umbertodomenicociccias
+ * */
 class SearchAdapter(private val fragment: Fragment, private val searchList: List<Hits>) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 

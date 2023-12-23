@@ -2,6 +2,11 @@ package com.main.songfinder.logic.dao
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Questa classe incapsula il risultato della get request di ricerca
+ * @author umbertodomenicociccia
+* */
+
 data class SearchResponse(val meta: Meta, val response: Response)
 data class Meta(val status: Int)
 data class Response(val hits: List<Hits>)

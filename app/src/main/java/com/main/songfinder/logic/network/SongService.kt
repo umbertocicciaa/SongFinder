@@ -4,12 +4,12 @@ import com.main.songfinder.SongFinderApplication
 import com.main.songfinder.logic.dao.SongResponse
 import retrofit2.Call
 import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Headers
 import retrofit2.http.Path
 import retrofit2.http.Query
-
-
+/**
+ * Questa interfaccia gestisce le get request relativo alle canzoni ricercate dall'utente
+ * @author umbertodomenicociccia
+ * */
 interface SongService {
     @GET("songs/{id}")
     fun searchSong(

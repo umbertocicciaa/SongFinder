@@ -6,7 +6,10 @@ import androidx.lifecycle.switchMap
 import com.main.songfinder.logic.Repository
 import com.main.songfinder.logic.dao.Hits
 import com.main.songfinder.logic.dao.SearchResponse
-
+/**
+ * Questa classe fornisce si occupa ad implementare il viewmodel relativo alla ricerca dell'utente
+ * @author umbertodomenicociccias
+ * */
 class SearchViewModel : ViewModel() {
     private val searchLiveData = MutableLiveData<String>()
 

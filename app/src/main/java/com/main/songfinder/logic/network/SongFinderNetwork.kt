@@ -9,14 +9,21 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.coroutines.suspendCoroutine
 
+/**
+ * Questo singleton incapsula tutte le funzionalita di rete del software
+ * @author umbertodomenicociccias
+ * */
 object SongFinderNetwork {
 
     private val searchService = ServiceCreator.create(SearchService::class.java)
     private val songService = ServiceCreator.create(SongService::class.java)
+
     suspend fun searchResponse(name: String): SearchResponse =
         searchService.searchResponse(name).await()
+
     suspend fun searchSong(id: String): SongResponse =
         songService.searchSong(id).await()
+
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->
             enqueue(object : Callback<T> {

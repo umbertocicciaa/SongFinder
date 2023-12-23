@@ -2,4 +2,7 @@
     <string name="app_name">SongFinder</string>
     <string name="input_research">Input Research</string>
     <string name="song_image">song image</string>
+    <string name="album_image">album image</string>
+    <string name="go_to_lyrics">Go to Lyrics</string>
+    <string name="go_to_album">Go to Album</string>
 </resources>

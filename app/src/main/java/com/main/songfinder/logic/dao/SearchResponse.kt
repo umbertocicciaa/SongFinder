@@ -11,9 +11,10 @@ data class Result(
     val nameArtist: String,
     @SerializedName("full_title")
     val title: String,
-    val songId: Int,
+    @SerializedName("id")
+    val songId: String,
     @SerializedName("lyrics_owner_id")
-    val lyrycsOwnerId: Int,
+    val lyrycsOwnerId: String,
     @SerializedName("song_art_image_thumbnail_url")
     val imageUrl: String
 )

@@ -52,6 +52,7 @@ class SearchFragment : Fragment() {
                 adapter.notifyDataSetChanged()
             }
         }
+
         viewModel.searchResponseLiveData.observe(viewLifecycleOwner) { result ->
             val search = result.getOrNull()
             if (search != null) {

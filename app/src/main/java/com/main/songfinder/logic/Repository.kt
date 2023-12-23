@@ -2,6 +2,7 @@ package com.main.songfinder.logic
 
 import androidx.lifecycle.liveData
 import com.main.songfinder.SongFinderApplication
+import com.main.songfinder.logic.dao.SongDao
 import com.main.songfinder.logic.dao.SongResponse
 import com.main.songfinder.logic.network.SongFinderNetwork
 import kotlinx.coroutines.Dispatchers
@@ -43,5 +44,9 @@ object Repository {
         }
         emit(result)
     }
+
+    fun saveSong(song: SongResponse) = SongDao.saveSong(song)
+    fun getSavedSong(songId: String) = SongDao.getSavedSong(songId)
+    fun isSongSaved(songId: String) = SongDao.isSongSaved(songId)
 
 }

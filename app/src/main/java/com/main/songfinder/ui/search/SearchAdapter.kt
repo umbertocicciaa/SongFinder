@@ -7,18 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
 import com.main.songfinder.SongFinderApplication
 import com.main.songfinder.logic.dao.Hits
 import com.main.songfinder.ui.song.SongActivity
+
 /**
  * Questa classe implementa l'adatattore per la recycle view
  * @author umbertodomenicociccias
  * */
-class SearchAdapter(private val fragment: Fragment, private val searchList: List<Hits>) :
+class SearchAdapter(
+    private val fragment: SearchFragment,
+    private val searchList: List<Hits>
+) :
     RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

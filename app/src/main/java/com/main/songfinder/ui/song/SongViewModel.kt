@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.main.songfinder.logic.Repository
+import com.main.songfinder.logic.dao.SongResponse
 
 /**
  * Questa classe fornisce si occupa ad implementare il viewmodel relativo alle canzoni ricercate dall'utente
@@ -19,4 +20,8 @@ class SongViewModel : ViewModel() {
     fun refreshSongId(id: String) {
         idSongLiveData.value = id
     }
+
+    fun saveSong(song: SongResponse) = Repository.saveSong(song)
+    fun getSavedSong(songId:String) = Repository.getSavedSong(songId)
+    fun isSongSaved(songId:String) = Repository.isSongSaved(songId)
 }

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -27,11 +28,19 @@ class SongActivity : AppCompatActivity() {
         setContentView(R.layout.activity_song)
 
         val songId = intent.getStringExtra("song_id")
+
+        if (songId != null && viewModel.isSongSaved(songId)) {
+            showSongInfo(viewModel.getSavedSong(songId))
+            Log.d("SongActivity", "Song loaded by file")
+            return
+        }
+
         if (songId != null)
             viewModel.refreshSongId(songId)
         viewModel.songLiveData.observe(this) { result ->
             val song = result.getOrNull()
             if (song != null) {
+                viewModel.saveSong(song)
                 showSongInfo(song)
             } else {
                 Toast.makeText(this, "Failed to get song data", Toast.LENGTH_SHORT).show()

@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.main.songfinder.R
 
+
 /**
  * Questa classe fornisce il fragment  della main activity
  * @author umbertodomenicociccias
@@ -38,6 +39,7 @@ class SearchFragment : Fragment() {
     @Suppress("DEPRECATION")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         val layoutManager = LinearLayoutManager(activity)
         val recyclerView: RecyclerView = this.requireView().findViewById(R.id.recyclerView)
         recyclerView.layoutManager = layoutManager

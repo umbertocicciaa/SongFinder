@@ -21,7 +21,8 @@ data class Song(
     val artits: String,
     @SerializedName("lyrics_owner_id")
     val artisId: String,
-    val album: Album
+    val album: Album,
+    val id: String
 )
 
 data class Album(

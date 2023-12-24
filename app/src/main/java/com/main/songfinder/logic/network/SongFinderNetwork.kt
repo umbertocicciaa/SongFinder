@@ -1,5 +1,6 @@
 package com.main.songfinder.logic.network
 
+import com.main.songfinder.logic.dao.ArtistResponse
 import com.main.songfinder.logic.dao.SearchResponse
 import com.main.songfinder.logic.dao.SongResponse
 import retrofit2.Call
@@ -17,12 +18,15 @@ object SongFinderNetwork {
 
     private val searchService = ServiceCreator.create(SearchService::class.java)
     private val songService = ServiceCreator.create(SongService::class.java)
-
+    private val artistService = ServiceCreator.create(ArtistService::class.java)
     suspend fun searchResponse(name: String): SearchResponse =
         searchService.searchResponse(name).await()
 
     suspend fun searchSong(id: String): SongResponse =
         songService.searchSong(id).await()
+
+    suspend fun searchArtist(artistId: String): ArtistResponse =
+        artistService.searchArtist(artistId).await()
 
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->
@@ -33,7 +37,6 @@ object SongFinderNetwork {
                         RuntimeException("response body is null")
                     )
                 }
-
                 override fun onFailure(call: Call<T>, t: Throwable) {
                     continuation.resumeWithException(t)
                 }

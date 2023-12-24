@@ -2,6 +2,7 @@ package com.main.songfinder.logic
 
 import androidx.lifecycle.liveData
 import com.main.songfinder.SongFinderApplication
+import com.main.songfinder.logic.dao.ArtistResponse
 import com.main.songfinder.logic.dao.SongDao
 import com.main.songfinder.logic.dao.SongResponse
 import com.main.songfinder.logic.network.SongFinderNetwork
@@ -38,6 +39,22 @@ object Repository {
                 Result.success(songResponse)
             } else {
                 Result.failure(RuntimeException("response status is ${songResponse.meta.status}"))
+            }
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
+        emit(result)
+    }
+
+    /**Il metodo effettuata una ricerca di artista in rete data una stringa id fornita dall'utente e ne associa il risultato al live data chiamante
+     **/
+    fun searchArtist(artistId: String) = liveData(Dispatchers.IO) {
+        val result = try {
+            val artistResponse: ArtistResponse = SongFinderNetwork.searchArtist(artistId)
+            if (artistResponse.meta.status == SongFinderApplication.RESPONSE_OK) {
+                Result.success(artistResponse)
+            } else {
+                Result.failure(RuntimeException("response status is ${artistResponse.meta.status}"))
             }
         } catch (e: Exception) {
             Result.failure(e)

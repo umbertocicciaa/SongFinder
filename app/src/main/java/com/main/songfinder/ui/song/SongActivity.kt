@@ -14,8 +14,9 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
-import com.main.songfinder.SongFinderApplication
+import com.main.songfinder.SongFinderApplication.Companion.context
 import com.main.songfinder.logic.dao.SongResponse
+import com.main.songfinder.ui.artist.ArtistActivity
 
 class SongActivity : AppCompatActivity() {
 
@@ -57,11 +58,12 @@ class SongActivity : AppCompatActivity() {
         val songRelease = findViewById<TextView>(R.id.songRelease)
         val goToLyrics = findViewById<Button>(R.id.goToLyrics)
         val goToAlbum = findViewById<Button>(R.id.goToAlbum)
+        val goToArtist = findViewById<Button>(R.id.goToArtist)
         val imageUrl = song.response.song.album.imageUrl
         val albumUrl = song.response.song.album.url
         val songUrl = song.response.song.url
         if (imageUrl.isNotEmpty())
-            Glide.with(SongFinderApplication.context).load(imageUrl).into(albumImage)
+            Glide.with(context).load(imageUrl).into(albumImage)
 
         nameArtist.text = song.response.song.artits
         songTitle.text = song.response.song.title
@@ -80,6 +82,14 @@ class SongActivity : AppCompatActivity() {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(albumUrl))
                 startActivity(intent)
             }
+        }
+
+        goToArtist.setOnClickListener {
+            val intent = Intent(context, ArtistActivity::class.java).apply {
+                Log.d("artist_id", song.response.song.artist.id)
+                putExtra("artist_id", song.response.song.artist.id)
+            }
+            startActivity(intent)
         }
     }
 

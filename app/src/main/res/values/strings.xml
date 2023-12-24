@@ -5,4 +5,7 @@
     <string name="album_image">album image</string>
     <string name="go_to_lyrics">Go to Lyrics</string>
     <string name="go_to_album">Go to Album</string>
+    <string name="title_activity_artist">ArtistActivity</string>
+    <string name="artist_image">artist image</string>
+    <string name="go_to_artist">go to artist</string>
 </resources>

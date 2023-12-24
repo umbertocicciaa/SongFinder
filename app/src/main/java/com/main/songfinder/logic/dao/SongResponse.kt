@@ -22,7 +22,9 @@ data class Song(
     @SerializedName("lyrics_owner_id")
     val artisId: String,
     val album: Album,
-    val id: String
+    val id: String,
+    @SerializedName("primary_artist")
+    val artist: ArtistInfo
 )
 
 data class Album(
@@ -30,5 +32,9 @@ data class Album(
     val imageUrl: String,
     //genius url
     val url: String
+)
+
+data class ArtistInfo(
+    val id: String
 )
 

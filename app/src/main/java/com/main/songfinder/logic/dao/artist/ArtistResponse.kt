@@ -13,6 +13,6 @@ data class Artist(
     val id: String,
     @SerializedName("image_url")
     val urlImage: String?,
-    val url: String,
+    val url: String?,
     val name: String
 )

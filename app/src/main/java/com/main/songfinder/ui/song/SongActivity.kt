@@ -63,9 +63,9 @@ class SongActivity : AppCompatActivity() {
         val goToLyrics = findViewById<Button>(R.id.goToLyrics)
         val goToAlbum = findViewById<Button>(R.id.goToAlbum)
         val goToArtist = findViewById<Button>(R.id.goToArtist)
-        val imageUrl = song.response.song.album.imageUrl
-        val albumUrl = song.response.song.album.url
-        val songUrl = song.response.song.url
+        val imageUrl: String? = song.response.song.album.imageUrl
+        val albumUrl: String? = song.response.song.album.url
+        val songUrl: String? = song.response.song.url
 
         if (!imageUrl.isNullOrEmpty())
             Glide.with(context).load(imageUrl).into(albumImage)
@@ -76,14 +76,14 @@ class SongActivity : AppCompatActivity() {
         songLayout.visibility = View.VISIBLE
 
         goToLyrics.setOnClickListener {
-            if (songUrl.isNotEmpty()) {
+            if (!songUrl.isNullOrEmpty()) {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(songUrl))
                 startActivity(intent)
             }
         }
 
         goToAlbum.setOnClickListener {
-            if (albumUrl.isNotEmpty()) {
+            if (!albumUrl.isNullOrEmpty()) {
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(albumUrl))
                 startActivity(intent)
             }

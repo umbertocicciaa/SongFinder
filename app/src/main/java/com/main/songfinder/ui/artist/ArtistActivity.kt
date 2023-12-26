@@ -61,7 +61,7 @@ class ArtistActivity : AppCompatActivity() {
         val imageUrl = artist.response.artist.urlImage
         val artistUrl = artist.response.artist.url
         val layout: RelativeLayout = findViewById(R.id.artistLayout)
-        if (imageUrl.isNotEmpty())
+        if (!imageUrl.isNullOrEmpty())
             Glide.with(SongFinderApplication.context).load(imageUrl).into(artistImage)
         nameArtist.text = artist.response.artist.name
         goToArtist.setOnClickListener {

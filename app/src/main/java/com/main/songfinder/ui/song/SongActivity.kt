@@ -17,6 +17,7 @@ import com.main.songfinder.R
 import com.main.songfinder.SongFinderApplication.Companion.context
 import com.main.songfinder.logic.dao.song.SongResponse
 import com.main.songfinder.ui.artist.ArtistActivity
+
 /**
  *  Questi classe si occupa dell'activity relativa alla visualizzazione delle canzoni
  *  @author umbertodomenicociccia
@@ -65,7 +66,8 @@ class SongActivity : AppCompatActivity() {
         val imageUrl = song.response.song.album.imageUrl
         val albumUrl = song.response.song.album.url
         val songUrl = song.response.song.url
-        if (imageUrl.isNotEmpty())
+
+        if (!imageUrl.isNullOrEmpty())
             Glide.with(context).load(imageUrl).into(albumImage)
 
         nameArtist.text = song.response.song.artits

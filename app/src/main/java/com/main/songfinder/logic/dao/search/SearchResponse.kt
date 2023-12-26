@@ -21,5 +21,5 @@ data class Result(
     @SerializedName("lyrics_owner_id")
     val lyrycsOwnerId: String,
     @SerializedName("song_art_image_thumbnail_url")
-    val imageUrl: String
+    val imageUrl: String?
 )

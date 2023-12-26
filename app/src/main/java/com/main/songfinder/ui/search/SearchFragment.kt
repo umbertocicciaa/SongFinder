@@ -109,21 +109,15 @@ class SearchFragment : Fragment(), ShakeDetector.OnShakeListener {
     override fun onShake() {
         val intent = Intent(requireContext(), UndoActivity::class.java)
         val requestCode = 0
-        val options = view?.let {
-            ActivityOptionsCompat.makeSceneTransitionAnimation(
-                requireActivity(),
-                it,
-                "animazione"
-            )
-        }
-        startActivityForResult(intent, requestCode, options?.toBundle())
-
+        startActivityForResult(intent, requestCode)
     }
+
     @Suppress("DEPRECATION")
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (data?.getStringExtra("undo_result") == requestCode.toString() && resultCode == Activity.RESULT_OK) {
+        val risultato = data?.getIntExtra("undo_result", -1)
+        if (requestCode == 0 && risultato != -1 && resultCode == Activity.RESULT_OK) {
             val searchResponseEdit: EditText =
                 this.requireView().findViewById(R.id.searchResponseEdit)
             searchResponseEdit.setText("")

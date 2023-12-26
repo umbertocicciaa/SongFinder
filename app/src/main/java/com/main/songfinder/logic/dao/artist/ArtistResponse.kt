@@ -12,7 +12,7 @@ data class ResponseAlbum(val artist: Artist)
 data class Artist(
     val id: String,
     @SerializedName("image_url")
-    val urlImage: String,
+    val urlImage: String?,
     val url: String,
     val name: String
 )

@@ -30,7 +30,7 @@ data class Song(
 
 data class Album(
     @SerializedName("cover_art_url")
-    val imageUrl: String,
+    val imageUrl: String?,
     //genius url
     val url: String
 )

@@ -1,4 +1,4 @@
-package com.main.songfinder.logic.network
+package com.main.songfinder.logic.network.service
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -15,9 +15,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
 import com.main.songfinder.SongFinderApplication.Companion.context
-import com.main.songfinder.logic.dao.SongResponse
+import com.main.songfinder.logic.dao.song.SongResponse
 import com.main.songfinder.ui.artist.ArtistActivity
-
+/**
+ *  Questi classe si occupa dell'activity relativa alla visualizzazione delle canzoni
+ *  @author umbertodomenicociccia
+ * */
 class SongActivity : AppCompatActivity() {
 
     private val viewModel by lazy {

@@ -1,4 +1,4 @@
-package com.main.songfinder.logic.dao
+package com.main.songfinder.logic.dao.search
 
 import com.google.gson.annotations.SerializedName
 

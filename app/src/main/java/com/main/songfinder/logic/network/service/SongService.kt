@@ -1,7 +1,7 @@
-package com.main.songfinder.logic.network
+package com.main.songfinder.logic.network.service
 
 import com.main.songfinder.SongFinderApplication
-import com.main.songfinder.logic.dao.SongResponse
+import com.main.songfinder.logic.dao.song.SongResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

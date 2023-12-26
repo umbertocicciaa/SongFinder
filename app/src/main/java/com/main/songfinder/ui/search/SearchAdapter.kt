@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
 import com.main.songfinder.SongFinderApplication
-import com.main.songfinder.logic.dao.Hits
+import com.main.songfinder.logic.dao.search.Hits
 import com.main.songfinder.ui.song.SongActivity
 
 /**

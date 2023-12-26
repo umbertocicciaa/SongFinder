@@ -1,6 +1,7 @@
-package com.main.songfinder.logic.dao
+package com.main.songfinder.logic.dao.song
 
 import com.google.gson.annotations.SerializedName
+import com.main.songfinder.logic.dao.search.Meta
 
 /**
  * Questa classe incapsula il risultato della get request di song

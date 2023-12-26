@@ -1,8 +1,12 @@
 package com.main.songfinder.logic.network
 
-import com.main.songfinder.logic.dao.ArtistResponse
-import com.main.songfinder.logic.dao.SearchResponse
-import com.main.songfinder.logic.dao.SongResponse
+import com.main.songfinder.logic.dao.artist.ArtistResponse
+import com.main.songfinder.logic.dao.search.SearchResponse
+import com.main.songfinder.logic.dao.song.SongResponse
+import com.main.songfinder.logic.network.service.ArtistService
+import com.main.songfinder.logic.network.service.SearchService
+import com.main.songfinder.logic.network.service.ServiceCreator
+import com.main.songfinder.logic.network.service.SongService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

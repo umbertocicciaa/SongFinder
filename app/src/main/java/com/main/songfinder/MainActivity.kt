@@ -6,7 +6,10 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.main.songfinder.SongFinderApplication.Companion.context
 
-
+/**
+ *  Questi classe si occupa dell'activity principale
+ *  @author umbertodomenicociccia
+ * */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

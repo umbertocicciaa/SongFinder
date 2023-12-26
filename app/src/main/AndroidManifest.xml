@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
 
     <application
         android:name=".SongFinderApplication"
@@ -21,6 +22,11 @@
             android:label="@string/title_activity_artist"
             android:theme="@style/Theme.SongFinder" />
         <activity
+            android:name=".ui.search.UndoActivity"
+            android:exported="false"
+            android:label="@string/title_activity_undo"
+            />
+        <activity
             android:name=".ui.song.SongActivity"
             android:exported="false" />
         <activity
@@ -28,7 +34,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

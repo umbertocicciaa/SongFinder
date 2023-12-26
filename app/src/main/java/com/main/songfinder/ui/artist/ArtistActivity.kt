@@ -3,6 +3,7 @@ package com.main.songfinder.ui.artist
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -14,8 +15,12 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
 import com.main.songfinder.SongFinderApplication
-import com.main.songfinder.logic.dao.ArtistResponse
+import com.main.songfinder.logic.dao.artist.ArtistResponse
 
+/**
+ *  Questi classe si occupa dell'activity relativa alla visualizzazione degli artisti
+ *  @author umbertodomenicociccia
+ * */
 class ArtistActivity : AppCompatActivity() {
 
     private val viewModel by lazy {
@@ -27,11 +32,19 @@ class ArtistActivity : AppCompatActivity() {
         setContentView(R.layout.activity_artist)
 
         val artistId = intent.getStringExtra("artist_id")
+
+        if (artistId != null && viewModel.isArtistSaved(artistId)) {
+            showArtistInfo(viewModel.getSavedArtist(artistId))
+            Log.d("ArtistActivity", "Artist loaded by file")
+            return
+        }
+
         if (artistId != null)
             viewModel.refreshArtist(artistId)
         viewModel.artistLiveData.observe(this) { result ->
             val artist = result.getOrNull()
             if (artist != null) {
+                viewModel.saveArtist(artist)
                 showArtistInfo(artist)
             } else {
                 Toast.makeText(this, "Failed to get artist data", Toast.LENGTH_SHORT).show()

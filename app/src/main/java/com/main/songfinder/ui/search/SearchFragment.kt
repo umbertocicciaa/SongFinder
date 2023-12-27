@@ -125,6 +125,10 @@ class SearchFragment : Fragment(), ShakeDetector.OnShakeListener {
     }
 }
 
+/**
+ * Questa classe fornisce si occupa di implementare l'evento shake
+ * @author umbertodomenicociccias
+ * */
 class ShakeDetector(private val listener: OnShakeListener) : SensorEventListener {
 
     private var lastUpdate: Long = 0

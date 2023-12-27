@@ -8,14 +8,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.main.songfinder.R
 
+/**
+ * Questa classe si occupa di implementare l'activity relativa alla visualizzazione dell'azione di shake for undo
+ * @author umbertodomenicociccias
+ * */
+
+
 class UndoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_undo)
 
         val resultIntent = Intent()
-        val undoButton : Button = findViewById(R.id.undoButton)
-        val constraintLayout :ConstraintLayout= findViewById(R.id.constraint_layout)
+        val undoButton: Button = findViewById(R.id.undoButton)
+        val constraintLayout: ConstraintLayout = findViewById(R.id.constraint_layout)
         undoButton.setOnClickListener {
             resultIntent.putExtra("undo_result", 0)
             setResult(Activity.RESULT_OK, resultIntent)

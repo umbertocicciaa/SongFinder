@@ -24,7 +24,7 @@ class SongFinderApplication : Application() {
         const val HEADER = "Bearer $TOKEN"
 
         /**
-         * valore positivo per il response
+         * valore positivo del response fornito dal provider delle api
          * */
         const val RESPONSE_OK: Int = 200
     }

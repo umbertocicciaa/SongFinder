@@ -7,7 +7,7 @@ import com.main.songfinder.logic.Repository
 import com.main.songfinder.logic.dao.song.SongResponse
 
 /**
- * Questa classe fornisce si occupa ad implementare il viewmodel relativo alle canzoni ricercate dall'utente
+ * Questa classe fornisce si occupa di implementare il viewmodel relativo alle canzoni ricercate dall'utente
  * @author umbertodomenicociccias
  * */
 class SongViewModel : ViewModel() {
@@ -22,7 +22,7 @@ class SongViewModel : ViewModel() {
     }
 
     /**
-     *  Questi tre metodi che incapsulano le funzionalita di salvataggio delle canzoni ricercate
+     *  Questi tre metodi che incapsulano le funzionalita di salvataggio e ripristino delle canzoni ricercate
      *  @author umbertodomenicociccia
      * */
     fun saveSong(song: SongResponse) = Repository.saveSong(song)

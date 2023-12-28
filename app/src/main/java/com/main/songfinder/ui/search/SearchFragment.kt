@@ -14,7 +14,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.app.ActivityOptionsCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -86,6 +85,12 @@ class SearchFragment : Fragment(), ShakeDetector.OnShakeListener {
                 result.exceptionOrNull()?.printStackTrace()
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        sensorManager.unregisterListener(shakeDetector)
+        Log.d("SearchFragment", "Sensor rilasciato")
     }
 
     override fun onResume() {

@@ -7,10 +7,10 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
@@ -60,7 +60,7 @@ class ArtistActivity : AppCompatActivity() {
         val goToArtist: Button = findViewById(R.id.goToArtist)
         val imageUrl: String? = artist.response.artist.urlImage
         val artistUrl: String? = artist.response.artist.url
-        val layout: RelativeLayout = findViewById(R.id.artistLayout)
+        val layout: ConstraintLayout = findViewById(R.id.artistLayout)
         if (!imageUrl.isNullOrEmpty())
             Glide.with(SongFinderApplication.context).load(imageUrl).into(artistImage)
         nameArtist.text = artist.response.artist.name

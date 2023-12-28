@@ -64,12 +64,17 @@ class SongActivity : AppCompatActivity() {
         val goToLyrics = findViewById<Button>(R.id.goToLyrics)
         val goToAlbum = findViewById<Button>(R.id.goToAlbum)
         val goToArtist = findViewById<Button>(R.id.goToArtist)
-        val imageUrl: String? = song.response.song.album.imageUrl
-        val albumUrl: String? = song.response.song.album.url
+        val imageUrl: String? = song.response.song.album?.imageUrl
+        val albumUrl: String? = song.response.song.album?.url
         val songUrl: String? = song.response.song.url
 
         if (!imageUrl.isNullOrEmpty())
             Glide.with(context).load(imageUrl).into(albumImage)
+
+        if (song.response.song.album==null) {
+            goToAlbum.visibility = View.INVISIBLE
+            goToAlbum.isEnabled=false
+        }
 
         nameArtist.text = song.response.song.artits
         songTitle.text = song.response.song.title
@@ -98,5 +103,4 @@ class SongActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
 }

@@ -1,5 +1,6 @@
 package com.main.songfinder.ui.search
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -43,6 +44,7 @@ class SearchFragment : Fragment(), ShakeDetector.OnShakeListener {
         return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onActivityCreated(savedInstanceState: Bundle?) {

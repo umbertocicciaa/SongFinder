@@ -19,11 +19,6 @@ class SongFinderApplication : Application() {
         const val TOKEN = "obNeGsUzN5SzzWHFeqTHYV7Z9fhaHSM2HdThUgZlPv5Y2eXjxYRqpAGuYWyVYQdy"
 
         /**
-         * header per le https request al provider in caso servisse
-         * */
-        const val HEADER = "Bearer $TOKEN"
-
-        /**
          * valore positivo del response fornito dal provider delle api
          * */
         const val RESPONSE_OK: Int = 200

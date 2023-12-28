@@ -21,7 +21,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.main.songfinder.R
 import kotlin.math.sqrt
-
 /**
  * Questa classe fornisce il fragment  della main activity
  * @author umbertodomenicociccias
@@ -81,7 +80,7 @@ class SearchFragment : Fragment(), ShakeDetector.OnShakeListener {
                 viewModel.responseList.addAll(search.response.hits)
                 adapter.notifyDataSetChanged()
             } else {
-                Toast.makeText(activity, "Cannot find any result", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, "Cannot find any result Check Internet Connection", Toast.LENGTH_LONG).show()
                 result.exceptionOrNull()?.printStackTrace()
             }
         }

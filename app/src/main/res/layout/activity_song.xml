@@ -12,36 +12,38 @@
 
     <ImageView
         android:id="@+id/albumImage"
-        android:layout_width="match_parent"
-        android:layout_height="255dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="431dp"
+        android:layout_height="419dp"
         android:contentDescription="@string/album_image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[4]" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[1]" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="48dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="47dp">
-
-        <TextView
-            android:id="@+id/nameArtist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="20sp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/songTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/nameArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="?android:attr/textColorSecondary"
-            android:textSize="14sp" />
+            android:textSize="19sp" />
 
         <TextView
             android:id="@+id/songRelease"
@@ -49,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:textColor="?android:attr/textColorSecondary"
-            android:textSize="14sp" />
+            android:textSize="19sp" />
 
         <Button
             android:id="@+id/goToLyrics"

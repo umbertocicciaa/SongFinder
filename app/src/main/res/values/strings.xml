@@ -9,6 +9,6 @@
     <string name="artist_image">artist image</string>
     <string name="go_to_artist">go to artist</string>
     <string name="undo">Undo</string>
-    <string name="vuoi_annullare_i_cambiamenti">Vuoi annullare i cambiamenti?</string>
+    <string name="vuoi_annullare_i_cambiamenti">Vuoi cancellare la ricerca?</string>
     <string name="title_activity_undo">UndoActivity</string>
 </resources>

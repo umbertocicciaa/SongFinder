@@ -10,8 +10,6 @@ Progetto Accademico: Questa applicazione è stata sviluppata come parte di un pr
 
 ## Requisiti di Sistema
 Android
-Installazione
-Clonare il repository:
 
 ## Contatti
 Per ulteriori informazioni, contattare il team di sviluppo:

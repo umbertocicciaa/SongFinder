@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/songLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,16 +12,21 @@
 
     <ImageView
         android:id="@+id/albumImage"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/album_image" />
+        android:layout_width="match_parent"
+        android:layout_height="255dp"
+        android:layout_marginBottom="192dp"
+        android:contentDescription="@string/album_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic[4]" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:layout_margin="18dp"
-        android:orientation="vertical">
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="47dp">
 
         <TextView
             android:id="@+id/nameArtist"
@@ -51,18 +58,19 @@
             android:text="@string/go_to_lyrics" />
 
         <Button
+            android:id="@+id/goToArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go_to_artist" />
+
+        <Button
             android:id="@+id/goToAlbum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/go_to_album" />
 
-        <Button
-            android:id="@+id/goToArtist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/go_to_artist" />
     </LinearLayout>
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

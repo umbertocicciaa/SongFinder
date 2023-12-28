@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.main.songfinder.R
@@ -55,7 +56,7 @@ class SongActivity : AppCompatActivity() {
     }
 
     private fun showSongInfo(song: SongResponse) {
-        val songLayout = findViewById<RelativeLayout>(R.id.songLayout)
+        val songLayout = findViewById<ConstraintLayout>(R.id.songLayout)
         val albumImage = findViewById<ImageView>(R.id.albumImage)
         val nameArtist = findViewById<TextView>(R.id.nameArtist)
         val songTitle = findViewById<TextView>(R.id.songTitle)

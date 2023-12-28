@@ -11,17 +11,14 @@
         <EditText
             android:id="@+id/searchResponseEdit"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_gravity="center_vertical"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@color/blue"
+            android:background="@color/purple_200"
             android:hint="@string/input_research"
             android:inputType="text"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:textColorHint="#E1BEE7"
-            android:autofillHints="Inserisci cosa cercare" />
+            android:textColorHint="#311B92" />
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView

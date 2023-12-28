@@ -107,6 +107,9 @@ class SearchFragment : Fragment(), ShakeDetector.OnShakeListener {
     @Deprecated("Deprecated in Java")
     @Suppress("DEPRECATION")
     override fun onShake() {
+        val searchResponseEdit: EditText = this.requireView().findViewById(R.id.searchResponseEdit)
+        if (searchResponseEdit.text.isNullOrEmpty())
+            return
         val intent = Intent(requireContext(), UndoActivity::class.java)
         val requestCode = 0
         startActivityForResult(intent, requestCode)

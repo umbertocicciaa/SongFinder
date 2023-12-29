@@ -22,6 +22,8 @@ class SongFinderApplication : Application() {
          * valore positivo del response fornito dal provider delle api
          * */
         const val RESPONSE_OK: Int = 200
+
+        const val FINDMEURL:String ="https://github.com/umbertocicciaa"
     }
 
     override fun onCreate() {

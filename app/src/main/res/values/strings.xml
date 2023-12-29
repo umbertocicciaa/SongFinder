@@ -11,4 +11,5 @@
     <string name="undo">Undo</string>
     <string name="vuoi_annullare_i_cambiamenti">Vuoi cancellare la ricerca?</string>
     <string name="title_activity_undo">UndoActivity</string>
+    <string name="inserisci_artista_da_ricercare">Inserisci Artista Da ricercare</string>
 </resources>

@@ -16,7 +16,7 @@ class SongFinderApplication : Application() {
         /**
          * token fornito dal provider delle api
          * */
-        const val TOKEN = "obNeGsUzN5SzzWHFeqTHYV7Z9fhaHSM2HdThUgZlPv5Y2eXjxYRqpAGuYWyVYQdy"
+        const val TOKEN = ""
 
         /**
          * valore positivo del response fornito dal provider delle api
